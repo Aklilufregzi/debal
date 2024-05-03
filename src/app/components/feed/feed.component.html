@@ -1,0 +1,36 @@
+<ion-list>
+  @for (feed of feeds; track $index) {
+
+  <ion-card button>
+    <ion-card-header>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="feed.image" />
+        </ion-avatar>
+        <ion-label>{{ feed.name }}</ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ion-badge color="primary" mode="ios">4200 - 5000 ETB</ion-badge>
+        <ion-badge color="primary" mode="ios">Gerji</ion-badge>
+      </div>
+      <ion-img [src]="feed.image"></ion-img>
+    </ion-card-content>
+
+    <ion-footer>
+      <ion-toolbar>
+        <div class="flex">
+          @for (item of feed.checklist; track $index) {
+
+          <ion-chip color="primary" mode="ios" outline="true">
+            <ion-label>{{ item }}</ion-label>
+          </ion-chip>
+
+          }
+        </div>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-card>
+  }
+</ion-list>
