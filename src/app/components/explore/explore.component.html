@@ -1,0 +1,110 @@
+<ion-content>
+  <div>
+
+    <form>
+
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>City</ion-label>
+              <ion-select value="peperoni" multiple="true" placeholder="Select Gender">
+                <ion-select-option value="hawaii">Adama</ion-select-option>
+
+                <ion-select-option value="peperoni">Addis Ababa</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>Type</ion-label>
+              <ion-select value="peperoni" multiple="true" placeholder="Select Gender">
+                <ion-select-option value="peperoni">Apartment</ion-select-option>
+                <ion-select-option value="hawaii">Flat</ion-select-option>
+                <ion-select-option value="hawaii">Condominum</ion-select-option>
+                <ion-select-option value="hawaii">villa</ion-select-option>
+
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>Gender</ion-label>
+              <ion-select value="peperoni" multiple="true" placeholder="Select Gender">
+                <ion-select-option value="peperoni">Male</ion-select-option>
+                <ion-select-option value="hawaii">Female</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>Area</ion-label>
+              <ion-select value="bole" multiple="true" placeholder="Select Pizza">
+                <ion-select-option value="bole">Bole</ion-select-option>
+                <ion-select-option value="gerji">Gerji</ion-select-option>
+                <ion-select-option value="piassa">Piassa</ion-select-option>
+                <ion-select-option value="lebu">Lebu</ion-select-option>
+                <ion-select-option value="4kilo">4 killo</ion-select-option>
+                <ion-select-option value="22">Haya Hulet</ion-select-option>
+                <ion-select-option value="ayat">Ayat</ion-select-option>
+
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Bedrooms</ion-label>
+              <ion-select value="peperoni" multiple="true" placeholder="Select Pizza">
+                <ion-select-option value="peperoni">2 Bedroom</ion-select-option>
+                <ion-select-option value="hawaii">3 Bedroom</ion-select-option>
+                <ion-select-option value="hawaii"> 2 Bedroom + Guest Toilet</ion-select-option>
+
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Price Range</ion-label>
+              <ion-range min="1500" max="10000" dualKnobs="true" pin="true" snaps="false" step="1000" ticks="false"
+                value="1500" color="danger" (ionChange)="rangeChange($event)">
+                <ion-label slot="start">{{priceRange().lower}}</ion-label>
+                <ion-label slot="end">{{priceRange().upper}}</ion-label>
+              </ion-range>
+            </ion-item>
+
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div>
+        <span style="text-align: center;">Please select 5 out of the list below</span> <br>
+        @for (item of optionList; track $index) {
+        <ion-chip color="primary" mode="ios" outline="true">
+          <ion-label>{{item}}</ion-label>
+        </ion-chip>
+        }
+      </div>
+    </form>
+
+  </div>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button (click)="submit()">
+        <ion-icon slot="start" name="search"></ion-icon>
+        Submit Search
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>
